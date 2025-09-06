@@ -92,8 +92,7 @@ const Projects = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3001/api/projects')
-      .then(response => { setProjects(response.data); })
+axios.get(`${import.meta.env.VITE_API_URL}/api/projects`)      .then(response => { setProjects(response.data); })
       .catch(error => { console.error("Houve um erro ao buscar os projetos:", error); });
   }, []);
 
